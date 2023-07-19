@@ -7,5 +7,13 @@ class CreateComments < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
+
+    unless index_exists?(:comment, :author_id)
+      add_index :comment, :author_id
+    end
+
+    unless index_exists?(:comment, :post_id)
+      add_index :comment, :post_id
+    end
   end
 end

@@ -9,5 +9,10 @@ class CreatePosts < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
+    
+    # Index for foreign key column "author_id"
+    unless index_exists?(:post, :author_id)
+      add_index :post, :author_id 
+    end
   end
 end

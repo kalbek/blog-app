@@ -6,5 +6,13 @@ class CreateLikes < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
+
+    unless index_exists?(:like, :author_id)
+      add_index :like, :author_id
+    end
+
+    unless index_exists?(:like, :post_id)
+      add_index :like, :post_id
+    end
   end
 end
