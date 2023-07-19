@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_19_112332) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_19_112605) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "adminpack"
   enable_extension "plpgsql"
+
+  create_table "post", force: :cascade do |t|
+    t.bigint "author_id"
+    t.string "title"
+    t.text "text"
+    t.integer "comments_counter"
+    t.integer "likes_counter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_post_on_author_id"
+  end
 
   create_table "user", force: :cascade do |t|
     t.string "name"
@@ -24,4 +35,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_19_112332) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "post", "user", column: "author_id"
 end
