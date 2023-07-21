@@ -42,7 +42,7 @@ class PostTest < ActiveSupport::TestCase
   test 'recent_comments returns the most recent comments' do
     user = create(:user)
     post = create(:post, author: user)
-    create_list(:comment, 5, post: post)
+    create_list(:comment, 5, post:)
     assert_equal 5, post.recent_comments.count
   end
 
