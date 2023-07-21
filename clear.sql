@@ -1,5 +1,5 @@
-DROP TABLE "like";
-DROP TABLE "comment";
-DROP TABLE "post";
-DROP TABLE "user";
+DROP TABLE "likes";
+DROP TABLE "comments";
+DROP TABLE "posts";
+DROP TABLE "users";
 DROP TABLE schema_migrations;
