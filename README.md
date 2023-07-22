@@ -79,7 +79,9 @@ Clone this repository to your desired folder: hhttps://github.com/kalbek/blog-ap
 To use this project modify database.yml file at the development section to specify your database settings
 
 ### Run tests
-command to run: rails test:models
+command to run:
+- bundle install
+- bundle exec rspec
  
 ### Deployment
 
