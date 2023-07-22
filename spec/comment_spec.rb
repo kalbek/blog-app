@@ -9,7 +9,7 @@ RSpec.describe Comment, type: :model do
 
   describe 'after_create' do
     it 'updates the comments_counter of the associated post' do
-      comment = Comment.create(author: @user, post: @post, text: 'Test comment')
+      Comment.create(author: @user, post: @post, text: 'Test comment')
       @post.reload
       expect(@post.comments_counter).to eq(1)
     end
