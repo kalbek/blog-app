@@ -42,7 +42,11 @@ This repository contains ruby files with ruby code.
 
 ### Key Features <a name="key-features"></a>
 
-- ****
+- Creating users
+- Creating posts
+- Commenting on posts
+- Liking a post 
+
 - **Crateing data-model**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
