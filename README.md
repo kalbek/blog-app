@@ -42,7 +42,11 @@ This repository contains ruby files with ruby code.
 
 ### Key Features <a name="key-features"></a>
 
-- ****
+- Creating users
+- Creating posts
+- Commenting on posts
+- Liking a post 
+
 - **Crateing data-model**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -75,7 +79,9 @@ Clone this repository to your desired folder: hhttps://github.com/kalbek/blog-ap
 To use this project modify database.yml file at the development section to specify your database settings
 
 ### Run tests
-
+command to run:
+- bundle install
+- bundle exec rspec
  
 ### Deployment
 
