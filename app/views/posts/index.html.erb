@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Posts</title>
+</head>
+<body>
+  <h1>User Posts</h1>
+  <p>User ID: <%= @user.id %></p>
+  <!-- Display user posts here -->
+  <% @posts.each do |post| %>
+    <p><%= post.title %></p>
+  <% end %>
+</body>
+</html>
