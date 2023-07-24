@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     @posts = Post.all
     # Add any additional logic you want for displaying all posts
   end
-  
+
   def show
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:id])
