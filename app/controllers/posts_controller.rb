@@ -1,6 +1,7 @@
 # app/controllers/posts_controller.rb
 class PostsController < ApplicationController
   def index
+    @user = User.first
     @posts = Post.all
     # Add any additional logic you want for displaying all posts
   end
