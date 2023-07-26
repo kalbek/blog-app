@@ -4,8 +4,26 @@
   <title>User Profile</title>
 </head>
 <body>
-  <h1>User Profile</h1>
-  <p>User ID: <%= @user.id %></p>
-  <!-- Display other user details here -->
+  <div class="user-container ">
+    <div class="users flex-spaced">
+      <div class="user-photo bordered">Photo</div>
+      <div class="details bordered flex-spaced">
+          <div class="user-name"><%= @user.name %></div>
+          <div class="post-nums">Number of posts: <%= @user.posts.count %></div>
+      </div>
+    </div>
+    <div class="bio bordered flex-c">
+      <p>bio</p>
+      <span><%= @user.bio %></span>
+    </div>
+    <div class="post-container .flex-column">
+    <% @user.posts.each_with_index do |post, index| %>
+      <div class="bio bordered flex-c">
+        <p>post #<%= index + 1 %> </p> 
+        <span><%= post.text %></span>
+      </div>
+    </div>
+    <% end %>
+  </div> 
 </body>
 </html>

@@ -1,0 +1,70 @@
+.uses {
+    width: 100vw;
+    height: auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.user-container {
+    display: flex;
+    flex-direction: column  ;
+    gap: 1.5rem;
+    padding: 2% 20% 0;
+}
+
+.flex-spaced {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bordered {
+    outline: 2px solid black;
+}
+
+.details {
+    padding:3rem;
+    width: 70%;
+}
+
+.user-photo {
+    width: 10%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-name {
+    font-size: 30px;
+}
+
+.post-nums {
+    font-weight: 20px;
+    font-weight: bold;
+}
+
+.bio {
+    padding: 0 1rem;
+    width: 100%;
+    height: 20vh;
+}
+
+.flex-c {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.bio p {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column  ;
+    gap: 1.5rem;
+    padding: 2% 20% 0;
+}
