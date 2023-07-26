@@ -88,3 +88,16 @@
     justify-content: center;
     align-items: center;
 }
+
+.post-comment {
+    border: 2px solid black;
+    position: relative;
+}
+
+.comment-likes {
+    position: absolute;
+    right: 1rem;
+    bottom: 0.3rem;
+    font-size: 15px;
+    font-weight: bolder;
+}

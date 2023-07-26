@@ -18,9 +18,15 @@
     </div>
     <div class="post-container .flex-column">
     <% @user.posts.each_with_index do |post, index| %>
-      <div class="bio bordered flex-c">
-        <p>post #<%= index + 1 %> </p> 
-        <span><%= post.text %></span>
+      <div class="flex post-comment">
+        <div class="bio flex-c">
+          <p>post #<%= index + 1 %> </p> 
+          <span><%= post.text %></span>
+        </div>
+        <div class="comment-likes">
+          <div>Comments: <%= post.comments.count%></div>
+          <div>Likes:  <%= post.likes.count%></div>
+        </div>
       </div>
     </div>
     <% end %>
