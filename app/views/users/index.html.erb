@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Blog App</title>
+</head>
+<body>
+  <div class="user-container ">
+  <% @users.each do |user| %>
+    <div class="users flex-spaced">
+      <div class="user-photo bordered"></div>
+      <div class="details bordered flex-spaced">
+          <div class="user-name"><%= user.name %></div>
+          <div class="post-nums">Number of posts:<%= user.posts.count %> </div>
+      </div>
+    </div>
+    <% end %>
+  </div> 
+</body>
+</html>
