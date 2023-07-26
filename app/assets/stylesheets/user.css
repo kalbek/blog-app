@@ -68,3 +68,23 @@
     gap: 1.5rem;
     padding: 2% 20% 0;
 }
+
+.see-all {
+    text-align: center;
+    width: fit-content;
+    padding: 0 1rem;
+    outline: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.see-all * {
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.flex-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
