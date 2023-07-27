@@ -1,43 +1,43 @@
 .uses {
-    width: 100vw;
-    height: auto;
+  width: 100vw;
+  height: auto;
 }
 
 .flex {
-    display: flex;
+  display: flex;
 }
 
 .user-container {
-    display: flex;
-    flex-direction: column  ;
-    gap: 1.5rem;
-    padding: 2% 20% 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2% 20% 0;
 }
 
 .flex-spaced {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .bordered {
-    outline: 2px solid black;
+  outline: 2px solid black;
 }
 
 .details {
-    padding:3rem;
-    width: 70%;
+  padding: 3rem;
+  width: 70%;
 }
 
 .user-photo {
-    width: 10%;
-    height: auto;
+  width: 10%;
+  height: auto;
 }
 
 .user-name {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .post-nums {
-    font-weight: 20px;
-    font-weight: bold;
+  font-size: 20px;
+  font-weight: bold;
 }
