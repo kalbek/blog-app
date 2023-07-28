@@ -19,10 +19,10 @@
     <div class="post-container mb-1">
     <% @user.recent_posts.each_with_index do |post, index| %>
       <div class="flex post-comment">
-        <div class="bio flex-c">
+        <a href="<%= user_post_path(@user, post) %>" class="bio flex-c">
           <p>post #<%= index + 1 %> </p> 
           <span><%= post.text %></span>
-        </div>
+        </a>
         <div class="comment-likes flex gap-1">
           <div>Comments: <%= post.comments.count%></div>
           <div>Likes:  <%= post.likes.count%></div>
