@@ -91,11 +91,17 @@
   height: 1.5rem;
 }
 
-.new-post {
+.new-post,
+.new-comment {
   outline: 1px solid #ccc;
 }
-.new-post h1 {
+
+.new-post h1  {
   margin-left: 2rem;
+}
+
+.new-comment h1 {
+  font-size: 30px;
 }
 
 .mt-4 {
@@ -115,7 +121,20 @@
   padding: 0 1rem;
   outline: 2px solid black;
   border-radius: 5px;
+  text-decoration: none;
   cursor: pointer;
+}
+
+.btn-like {
+  text-decoration: none;
+  border-radius: 5%;
+  bottom: 1%;
+  left: 1%;
+  padding: 0 1rem 0 1rem;
+}
+
+.gap-3 {
+  gap: 3rem;
 }
 
 .btn * {

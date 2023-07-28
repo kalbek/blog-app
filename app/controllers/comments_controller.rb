@@ -1,5 +1,12 @@
 class CommentsController < ApplicationController
+  def new
+    @post = Post.find(params[:post_id])
+    @comment = current_user.comments.build
+    @current_user = current_user
+  end
+
   def create
+    puts "postttttttttt: #{params[:post_id]}"
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
     @comment.user = current_user
