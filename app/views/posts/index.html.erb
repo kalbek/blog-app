@@ -28,7 +28,7 @@
       <% if post.comments.any? %>
       <div class="post-comment">
         <div class="bio bordered flex-c">
-          <% post.comments.each_with_index do |comment, index| %>
+          <% post.recent_comments.each_with_index do |comment, index| %>
             <% user = User.find_by(id: comment.author_id) %>
             <div class="flex">
               <%= user.name %>
