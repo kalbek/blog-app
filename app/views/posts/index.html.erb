@@ -13,7 +13,7 @@
       </div>
     </div>
     <% @posts.each_with_index do |post, index| %>
-      <div class="flex post-comment">
+      <div class="post-comment">
         <div class="bio bordered flex-c">
           <p>post #<%= index + 1 %> </p> 
           <span><%= post.text %></span>
@@ -26,7 +26,7 @@
 
       <!-- posts comment section  -->
       <% if post.comments.any? %>
-      <div class="flex post-comment">
+      <div class="post-comment">
         <div class="bio bordered flex-c">
           <% post.comments.each_with_index do |comment, index| %>
             <% user = User.find_by(id: comment.author_id) %>
