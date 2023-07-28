@@ -30,7 +30,10 @@
       </div>
     <% end %>
     <div class="  flex-centered">
-      <%= link_to user_posts_path(@user), class: "see-all" do %><p>See all posts</p><% end %>
+      <div class="flex">
+          <%= link_to user_posts_path(@user), class: "see-all" do %><p>See all posts</p><% end %>
+          <%= link_to new_post_path(@user), class: "see-all" do %><p>Add new post</p><% end %>
+      </div>
     </div>
     </div> 
 </body>
