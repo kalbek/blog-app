@@ -14,10 +14,10 @@
     </div>
     <% @user.posts.each_with_index do |post, index| %>
       <div class="post-comment">
-        <a href="<%= user_post_path(@user, post) %>" class="bio bordered flex-c">
+        <%= link_to user_post_path(@user, post),  class: "bio bordered flex-c" do %>
           <p>post #<%= index + 1 %> </p> 
           <span><%= post.text %></span>
-        </a>
+        <% end  %>
         <div class="comment-likes flex gap-1">
             <div>Comments: <%= post.comments.count%></div>
             <div>Likes:  <%= post.likes.count%></div>
