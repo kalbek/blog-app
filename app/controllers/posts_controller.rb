@@ -13,14 +13,20 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = current_user.posts.build
+    @current_user = current_user
   end
 
   def create
     @post = current_user.posts.build(post_params)
+    @post.comments_counter = 0
+    @post.likes_counter = 0
+
+    
     if @post.save
-      redirect_to @post, notice: 'Post created successfully.'
+      redirect_to user_post_path(@post.author, @post), notice: 'Post created successfully.'
     else
+      flash.now[:alert] = @post.errors.full_messages.join(', ')
       render :new
     end
   end
@@ -28,6 +34,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :text)
+    params.require(:post).permit(:title, :text, :comments_counter, :likes_counter)
   end
 end

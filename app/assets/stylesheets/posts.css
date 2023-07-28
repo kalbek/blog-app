@@ -27,6 +27,11 @@
   position: absolute;
 }
 
+.new-post {
+  left : 8%;
+  top: 2%
+}
+
 .top-right-cornor {
   top: 0.1rem;
   right: 0.5rem;

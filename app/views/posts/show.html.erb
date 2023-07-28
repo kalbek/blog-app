@@ -25,6 +25,7 @@
         <p><%= comment.text %></p>
       </div>
     <% end %>
+    <%= link_to user_path(@user), class: "btn absolute new-post mt-4" do %><p>My Posts</p><% end %>
     </div>
   </div>
 </body>
