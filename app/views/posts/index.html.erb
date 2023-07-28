@@ -4,11 +4,46 @@
   <title>User Posts</title>
 </head>
 <body>
-  <h1>User Posts</h1>
-  <p>User ID: <%= @user.id %></p>
-  <!-- Display user posts here -->
-  <% @posts.each do |post| %>
-    <p><%= post.title %></p>
-  <% end %>
+  <div class="user-container ">
+    <div class="users flex-spaced">
+      <div class="user-photo bordered">Photo</div>
+      <div class="details bordered flex-spaced">
+          <div class="user-name"><%= @user.name %></div>
+          <div class="post-nums">Number of posts: <%= @user.posts.count %></div>
+      </div>
+    </div>
+    <% @user.posts.each_with_index do |post, index| %>
+      <div class="post-comment">
+        <%= link_to user_post_path(@user, post),  class: "bio bordered flex-c" do %>
+          <p>post #<%= index + 1 %> </p> 
+          <span><%= post.text %></span>
+        <% end  %>
+        <div class="comment-likes flex gap-1">
+            <div>Comments: <%= post.comments.count%></div>
+            <div>Likes:  <%= post.likes.count%></div>
+        </div>
+      </div>
+
+      <!-- posts comment section  -->
+      <% if post.comments.any? %>
+      <div class="post-comment">
+        <div class="bio bordered flex-c">
+          <% post.recent_comments.each_with_index do |comment, index| %>
+            <% user = User.find_by(id: comment.author_id) %>
+            <div class="flex">
+              <%= user.name %>
+              <span><%= comment.text %></span>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+      <p> No comments yet! </p>
+    <% end %>
+    <% end %>
+    <div class="  flex-centered">
+    <div class="see-all"><p>Pagination</p></div>
+  </div>
+  </div> 
 </body>
 </html>

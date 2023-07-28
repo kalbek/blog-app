@@ -4,10 +4,28 @@
   <title>User Post</title>
 </head>
 <body>
-  <h1>User Post</h1>
-  <p>User ID: <%= @user.id %></p>
-  <p>Post ID: <%= @post.id %></p>
-  <!-- Display post content here -->
-  <p><%= @post.text %></p>
+  
+  <div class="user-container">
+    <div class="post-comment">
+      <div class="bio bordered flex-c relative">
+        <div class="flex-spaced">
+          <p>post by <%= @post.author.name %></p>
+          <div class="flex absolute top-right-cornor"> 
+            <p>comments <%= @post.comments.count %></p> 
+            <p>likes <%= @post.likes.count %></p>
+          </div>
+        </div>
+        <span><%= @post.text %></span>
+      </div>
+    </div>
+    <div class="flex-columnaaa post-comment">
+    <% @post.comments.each do |comment| %>
+      <div class="flex">
+        <p><%= comment.author.name %>: </p>
+        <p><%= comment.text %></p>
+      </div>
+    <% end %>
+    </div>
+  </div>
 </body>
 </html>

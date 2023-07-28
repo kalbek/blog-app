@@ -4,8 +4,34 @@
   <title>User Profile</title>
 </head>
 <body>
-  <h1>User Profile</h1>
-  <p>User ID: <%= @user.id %></p>
-  <!-- Display other user details here -->
+  <div class="user-container ">
+    <div class="users flex-spaced">
+      <div class="user-photo bordered">Photo</div>
+      <div class="details bordered flex-spaced">
+          <div class="user-name"><%= @user.name %></div>
+          <div class="post-nums">Number of posts: <%= @user.posts.count %></div>
+      </div>
+    </div>
+    <div class="bio bordered flex-c">
+      <p>bio</p>
+      <span><%= @user.bio %></span>
+    </div>
+    <div class="post-container mb-1">
+    <% @user.recent_posts.each_with_index do |post, index| %>
+      <div class="flex post-comment">
+        <%= link_to user_post_path(@user, post),  class: "bio flex-c" do %>
+          <p>post #<%= index + 1 %> </p> 
+          <span><%= post.text %></span>
+        <% end %>
+        <div class="comment-likes flex gap-1">
+          <div>Comments: <%= post.comments.count%></div>
+          <div>Likes:  <%= post.likes.count%></div>
+        </div>
+      </div>
+    <% end %>
+    <div class="  flex-centered">
+      <%= link_to user_posts_path(@user), class: "see-all" do %><p>See all posts</p><% end %>
+    </div>
+    </div> 
 </body>
 </html>
