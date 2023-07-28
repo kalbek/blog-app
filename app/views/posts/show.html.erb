@@ -25,7 +25,10 @@
         <p><%= comment.text %></p>
       </div>
     <% end %>
-    <%= link_to user_path(@user), class: "btn absolute new-post mt-4" do %><p>My Posts</p><% end %>
+    <div class="flex">
+      <%= link_to user_path(@user), class: "btn absolute my-post mt-4" do %><p>My Posts</p><% end %>
+      <%= link_to new_post_path(@user), class: "btn absolute new-post mt-4" do %><p>New Post</p><% end %>
+    </div>
     </div>
   </div>
 </body>

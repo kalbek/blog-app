@@ -5,7 +5,7 @@
 </head>
 <body>
   <div class="user-container relative">
-    <%= link_to new_post_path(@user), class: "btn absolute new-post" do %><p>Add new post</p><% end %>
+    <%= link_to new_post_path(@user), class: "btn absolute my-post" do %><p>Add new post</p><% end %>
   <% @users.each do |user| %>
     <div class="users flex-spaced">
     <div class="user-photo bordered"></div>

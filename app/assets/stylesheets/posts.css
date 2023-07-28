@@ -27,8 +27,13 @@
   position: absolute;
 }
 
-.new-post {
+.my-post {
   left : 8%;
+  top: 2%
+}
+
+.new-post {
+  right : 8%;
   top: 2%
 }
 
