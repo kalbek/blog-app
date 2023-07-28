@@ -28,6 +28,10 @@
   width: 70%;
 }
 
+.mb-1 *{
+  margin-bottom: 0.4rem;
+}
+
 .user-photo {
   width: 10%;
   height: auto;

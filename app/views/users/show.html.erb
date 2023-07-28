@@ -16,8 +16,8 @@
       <p>bio</p>
       <span><%= @user.bio %></span>
     </div>
-    <div class="post-container .flex-column">
-    <% @user.posts.each_with_index do |post, index| %>
+    <div class="post-container mb-1">
+    <% @user.recent_posts.each_with_index do |post, index| %>
       <div class="flex post-comment">
         <div class="bio flex-c">
           <p>post #<%= index + 1 %> </p> 
@@ -28,7 +28,6 @@
           <div>Likes:  <%= post.likes.count%></div>
         </div>
       </div>
-    </div>
     <% end %>
     <div class="  flex-centered">
       <div class="see-all"><p>See all posts</p></div>
