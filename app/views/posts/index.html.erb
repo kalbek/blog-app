@@ -9,15 +9,15 @@
       <div class="user-photo bordered">Photo</div>
       <div class="details bordered flex-spaced">
           <div class="user-name"><%= @user.name %></div>
-          <div class="post-nums">Number of posts: <%= @posts.count %></div>
+          <div class="post-nums">Number of posts: <%= @user.posts.count %></div>
       </div>
     </div>
-    <% @posts.each_with_index do |post, index| %>
+    <% @user.posts.each_with_index do |post, index| %>
       <div class="post-comment">
-        <div class="bio bordered flex-c">
+        <a href="<%= user_post_path(@user, post) %>" class="bio bordered flex-c">
           <p>post #<%= index + 1 %> </p> 
           <span><%= post.text %></span>
-        </div>
+        </a>
         <div class="comment-likes flex gap-1">
             <div>Comments: <%= post.comments.count%></div>
             <div>Likes:  <%= post.likes.count%></div>
