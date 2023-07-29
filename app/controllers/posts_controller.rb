@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     @post.comments_counter = 0
     @post.likes_counter = 0
 
-    
+
     if @post.save
       redirect_to user_post_path(@post.author, @post), notice: 'Post created successfully.'
     else

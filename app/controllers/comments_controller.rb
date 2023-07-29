@@ -4,16 +4,16 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build
     @current_user = current_user
     puts "post_id in new action: #{@post_id}" # Add this line to check the post_id value
-end
+  end
 
-def create
+  def create
     @user = current_user
     @post = Post.find_by(id: params[:comment][:post_id])
     if @post.nil?
-        # Handle the case when the post is not found
-        redirect_to posts_url, alert: 'Error adding comment: Post not found.'
-        return
-      end
+      # Handle the case when the post is not found
+      redirect_to posts_url, alert: 'Error adding comment: Post not found.'
+      return
+    end
     @comment = @post.comments.build(comment_params)
     @comment.author = current_user
     if @comment.save
@@ -28,5 +28,5 @@ def create
 
   def comment_params
     params.require(:comment).permit(:text, :post_id)
-  end    
+  end
 end

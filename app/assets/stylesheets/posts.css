@@ -28,21 +28,26 @@
 }
 
 .my-post {
-  left : 8%;
-  top: 2%
+  left: 8%;
+  top: 2%;
 }
 
 .new-post {
-  right : 8%;
-  top: 2%
+  right: 8%;
+  top: 2%;
 }
 
 .scroll {
   overflow: scroll;
 }
 
+.mr-1 {
+  margin-right: 1rem;
+  left: 1rem;
+}
+
 .like-btn {
-  padding:0.6rem 1rem;
+  padding: 0.6rem 1rem;
   background-color: #fff;
   border-radius: 10px;
   cursor: pointer;
