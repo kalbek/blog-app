@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = current_user.comments.build
     @current_user = current_user
-    puts "post_id in new action: #{@post_id}" # Add this line to check the post_id value
+    puts "post_id in new action: #{@post_id}"  
   end
 
   def create

@@ -3,13 +3,11 @@ class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @posts = Post.all
-    # Add any additional logic you want for displaying all posts
   end
 
   def show
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:id])
-    # Add any logic you want to perform for displaying a specific user post
   end
 
   def new
@@ -21,7 +19,6 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     @post.comments_counter = 0
     @post.likes_counter = 0
-
 
     if @post.save
       redirect_to user_post_path(@post.author, @post), notice: 'Post created successfully.'
