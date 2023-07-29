@@ -16,16 +16,19 @@
           </div>
         </div>
         <span><%= @post.text %></span>
+
+        <%= link_to new_comment_path(user_id: @user.id, post_id: @post.id), class: "btn absolute bottom-right-cornor mb-1" do %><p>Comment on this post</p><% end %>
       </div>
     </div>
-    <div class="flex-columnaaa post-comment">
+    <div class="flex-columnaaa post-comment pl-1">
+    <b>comments:</b>
     <% @post.comments.each do |comment| %>
       <div class="flex">
         <p><%= comment.author.name %>: </p>
         <p><%= comment.text %></p>
       </div>
     <% end %>
-    <div class="flex">
+    <div class="flex-spaced post-choice relative">
       <%= link_to user_path(@user), class: "btn absolute my-post mt-4" do %><p>My Posts</p><% end %>
       <%= link_to new_post_path(@user), class: "btn absolute new-post mt-4" do %><p>New Post</p><% end %>
     </div>

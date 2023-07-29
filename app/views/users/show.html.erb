@@ -15,7 +15,7 @@
     <div class="bio bordered flex-c">
       <p>bio</p>
       <span><%= @user.bio %></span>
-      <span>user id<%= @user.id %></span>
+      <span>user id<%= @user.id.class %></span>
     </div>
     <div class="post-container mb-1">
     <% @user.recent_posts.each_with_index do |post, index| %>
@@ -29,7 +29,7 @@
         <% end %>
         <div class="comment-likes flex gap-1">
           <div class="flex-c gap-3">
-              <%= link_to new_comment_path(user_id: @user.id, post_id: post.id), class: "btn" do %><p>Comment on this post</p><% end %>
+            <%= link_to new_comment_path(user_id: @user.id, post_id: post.id), class: "btn" do %><p>Comment on this post</p><% end %>
             <div>
               <div>Comments: <%= post.comments.count%></div>
               <div>Likes:  <%= post.likes.count%></div>

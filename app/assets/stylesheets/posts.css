@@ -42,6 +42,23 @@
   right: 0.5rem;
 }
 
+.bottom-right-cornor {
+  bottom: 0.1rem;
+  right: 0.5rem;
+}
+
+.pl-1 {
+  padding-left: 1rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.post-choice {
+  bottom: 1rem;
+}
+
 .bordered {
   outline: 2px solid black;
 }
