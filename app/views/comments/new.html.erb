@@ -8,8 +8,6 @@
 <div class="flex-column-centered new-comment mt-4 br-5">
   <h1>New Comment</h1>
   <%= form_with model: @comment, url: comments_path do |form| %>
-    <%= @post.id %>
-    post-id<%= @post.id %>
     <%= form.hidden_field :post_id, value: @post.id %>
     <div class="flex-column">
     <div class="flex">

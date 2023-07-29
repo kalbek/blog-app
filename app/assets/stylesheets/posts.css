@@ -41,6 +41,15 @@
   overflow: scroll;
 }
 
+.like-btn {
+  padding:0.6rem 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: purple;
+}
+
 .top-right-cornor {
   top: 0.1rem;
   right: 0.5rem;

@@ -24,7 +24,10 @@
           <p>post #<%= index + 1 %> </p>  </p>post-id:  <%= post.id %>
           <span><%= post.text %></span>
           <div class="flex">
-            <%= link_to user_posts_path(@user), class: "btn-like absolute btn" do %><p>Like this post</p><% end %>
+            <%= form_with model: @like, url: likes_path do |form| %>
+                <%= form.hidden_field :post_id, value: post.id %>
+                <%= form.submit "Like this post", class: "like-btn absolute bottom-left-cornor mb-1"%>
+           <% end %>
           </div>
         <% end %>
         <div class="comment-likes flex gap-1">

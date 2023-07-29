@@ -18,7 +18,11 @@
         <span><%= @post.text %></span>
 
         <%= link_to new_comment_path(user_id: @user.id, post_id: @post.id), class: "btn absolute bottom-right-cornor mb-1" do %><p>Comment on this post</p><% end %>
-        <%= link_to new_comment_path(user_id: @user.id, post_id: @post.id), class: "btn absolute bottom-left-cornor mb-1" do %><p>Like this post</p><% end %>
+          <%= form_with model: @like, url: likes_path do |form| %>
+              <%= form.hidden_field :post_id, value: @post.id %>
+              <%= form.submit "Like this post", class: "like-btn absolute bottom-left-cornor mb-1"%>
+         <% end %>
+
       </div>
     </div>
     <div class="flex-columnaaa post-comment pl-1">

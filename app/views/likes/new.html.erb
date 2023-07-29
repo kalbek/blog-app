@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Post</title>
+</head>
+<body>
+<%= form_with model: @like, url: likes_path do |form| %>
+    <div class="flex-column-centered">
+        <h1> Post liked successfully!</h1>
+        <%= form.submit "My Posts", class: "hey"%>
+    </div>
+<% end %>
+</body>
