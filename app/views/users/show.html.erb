@@ -21,7 +21,7 @@
     <% @user.recent_posts.each_with_index do |post, index| %>
       <div class="flex post-comment">
         <%= link_to user_post_path(@user, post),  class: "bio flex-c" do %>
-          <p>post #<%= index + 1 %> </p> 
+          <p>post #<%= index + 1 %> </p>  </p>post-id:  <%= post.id %>
           <span><%= post.text %></span>
           <div class="flex">
             <%= link_to user_posts_path(@user), class: "btn-like absolute btn" do %><p>Like this post</p><% end %>

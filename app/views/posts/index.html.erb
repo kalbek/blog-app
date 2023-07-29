@@ -12,10 +12,10 @@
           <div class="post-nums">Number of posts: <%= @user.posts.count %></div>
       </div>
     </div>
-    <% @user.posts.each_with_index do |post, index| %>
+    <% @user.posts.reverse_each.each_with_index do |post, index| %>
       <div class="post-comment">
         <%= link_to user_post_path(@user, post),  class: "bio bordered flex-c" do %>
-          <p>post #<%= index + 1 %> </p> 
+          <p>post #<%= index + 1 %> </p>post-id:  <%= post.id %>
           <span><%= post.text %></span>
         <% end  %>
         <div class="comment-likes flex gap-1">
@@ -27,8 +27,10 @@
       <!-- posts comment section  -->
       <% if post.comments.any? %>
       <div class="post-comment">
-        <div class="bio bordered flex-c">
-          <% post.recent_comments.each_with_index do |comment, index| %>
+        <div class="bio bordered flex-c scroll">
+        <% post.comments.each_with_index do |comment, index| %>
+          comment-id: <%= comment.id %> 
+          comment-author-id: <%= comment.author_id %> 
             <% user = User.find_by(id: comment.author_id) %>
             <div class="flex">
               <%= user.name %>

@@ -37,6 +37,10 @@
   top: 2%
 }
 
+.scroll {
+  overflow: scroll;
+}
+
 .top-right-cornor {
   top: 0.1rem;
   right: 0.5rem;
@@ -45,6 +49,10 @@
 .bottom-right-cornor {
   bottom: 0.1rem;
   right: 0.5rem;
+}
+
+.bottom-left-cornor {
+  bottom: 0.1rem;
 }
 
 .pl-1 {
