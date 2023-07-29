@@ -27,9 +27,58 @@
   position: absolute;
 }
 
+.my-post {
+  left: 8%;
+  top: 2%;
+}
+
+.new-post {
+  right: 8%;
+  top: 2%;
+}
+
+.scroll {
+  overflow: scroll;
+}
+
+.mr-1 {
+  margin-right: 1rem;
+  left: 1rem;
+}
+
+.like-btn {
+  padding: 0.6rem 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: purple;
+}
+
 .top-right-cornor {
   top: 0.1rem;
   right: 0.5rem;
+}
+
+.bottom-right-cornor {
+  bottom: 0.1rem;
+  right: 0.5rem;
+}
+
+.bottom-left-cornor {
+  bottom: 0.1rem;
+}
+
+.pl-1 {
+  padding-left: 1rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.post-choice {
+  bottom: 1rem;
 }
 
 .bordered {

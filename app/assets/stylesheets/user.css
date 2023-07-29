@@ -69,16 +69,75 @@
   padding: 2% 20% 0;
 }
 
-.see-all {
+.flex-column-centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
+  padding: 2% 20% 0;
+}
+
+.custom-text-area {
+  width: 200%;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.title-text-field {
+  border: 1px solid #ccc;
+  width: 200%;
+  height: 1.5rem;
+}
+
+.new-post,
+.new-comment {
+  outline: 1px solid #ccc;
+}
+
+.new-post h1 {
+  margin-left: 2rem;
+}
+
+.new-comment h1 {
+  font-size: 30px;
+}
+
+.mt-4 {
+  margin-top: 10%;
+}
+
+.hey {
+  width: 85%;
+  margin-left: 15%;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.btn {
   text-align: center;
   width: fit-content;
   padding: 0 1rem;
   outline: 2px solid black;
   border-radius: 5px;
+  text-decoration: none;
   cursor: pointer;
 }
 
-.see-all * {
+.btn-like {
+  text-decoration: none;
+  border-radius: 5%;
+  bottom: 1%;
+  left: 1%;
+  padding: 0 1rem 0 1rem;
+}
+
+.gap-3 {
+  gap: 3rem;
+}
+
+.btn * {
   font-size: 15px;
   font-weight: bolder;
 }
