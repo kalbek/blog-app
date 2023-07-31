@@ -8,6 +8,11 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Use the Capybara driver for feature/integration tests
+  config.use_transactional_fixtures = false
+  config.asset_host = 'http://localhost:3000' # Adjust the host as needed for your local setup
+  
+
   # Turn false under Spring and add config.action_view.cache_template_loading = true.
   config.cache_classes = true
 
