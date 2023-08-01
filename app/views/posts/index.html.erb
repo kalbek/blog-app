@@ -14,7 +14,7 @@
     </div>
     <% @user.posts.reverse_each.each_with_index do |post, index| %>
       <div class="post-comment">
-        <%= link_to user_post_path(@user, post),  class: "bio bordered flex-c" do %>
+        <%= link_to user_post_path(user_id: @user.id, id: post.id), id: "user-post-link-#{@user.id}", class: "bio bordered flex-c" do %>
           <p>post #<%= index + 1 %> </p>post-id:  <%= post.id %>
           <span><%= post.text %></span>
         <% end  %>

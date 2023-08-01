@@ -82,6 +82,10 @@ To use this project modify database.yml file at the development section to speci
 command to run:
 - bundle install
 - bundle exec rspec
+
+command to run for integration test:
+ - rails test:integration
+
  
 ### Deployment
 
