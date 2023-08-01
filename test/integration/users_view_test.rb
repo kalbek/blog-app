@@ -55,8 +55,5 @@ class UsersViewTest < ActionDispatch::IntegrationTest
     # Test if one I click to see all posts, it redirects me to the user's post's index page.
     # click_on 'See all posts'
     # assert_current_path(user_posts_path(@user))
-
-    # Test if one I click "Comment on this post", it redirects me to the comment creation page.
-    # assert_current_path(new_comment_path(user_id: @user.id, post_id: users(:one).posts.first.id))
   end
 end
