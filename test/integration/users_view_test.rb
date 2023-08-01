@@ -8,7 +8,7 @@ class UsersViewTest < ActionDispatch::IntegrationTest
     @user = users(:one)
   end
 
-  test "visiting the users index page" do
+  test 'visiting the users index page' do
     visit users_path
 
     # Test if I can see the username of all other users
@@ -16,7 +16,7 @@ class UsersViewTest < ActionDispatch::IntegrationTest
 
     # Check if the profile picture is displayed for each user
     assert page.has_content?(@user.photo)
-    
+
     # Test if the number of posts each user has written can be seen.
     assert page.has_content?("Number of posts:#{@user.posts_counter}")
 
@@ -47,7 +47,7 @@ class UsersViewTest < ActionDispatch::IntegrationTest
 
     # Test if one can see a button that lets me view all of a user's posts.
     # assert_selector 'a.btn.see-all-posts', text: 'See all posts', href: user_posts_path(@user)
-    
+
     # Test if one I click a user's post, it redirects me to that post's show page.
     click_on "user-post-link-#{@user.id}"
     assert_current_path(user_post_path(@user, users(:one).posts.first))
@@ -55,7 +55,7 @@ class UsersViewTest < ActionDispatch::IntegrationTest
     # Test if one I click to see all posts, it redirects me to the user's post's index page.
     # click_on 'See all posts'
     # assert_current_path(user_posts_path(@user))
-    
+
     # Test if one I click "Comment on this post", it redirects me to the comment creation page.
     # assert_current_path(new_comment_path(user_id: @user.id, post_id: users(:one).posts.first.id))
   end
