@@ -8,9 +8,11 @@
     <%= link_to new_post_path(@user), class: "btn absolute my-post" do %><p>Add new post</p><% end %>
   <% @users.each do |user| %>
     <div class="users flex-spaced">
-    <div class="user-photo bordered"></div>
+    <div class="user-photo bordered">
+      <img src="<%= user.photo %>">
+    </div>
     <div class="details bordered flex-spaced">
-        <%= link_to user do %>
+        <%= link_to user, class: "user-link", id: "user-link-#{user.id}" do %>
           <div class="user-name"><%= user.name %></div>
         <% end %>
           <div class="post-nums">Number of posts:<%= user.posts.count %> </div>
