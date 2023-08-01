@@ -58,4 +58,31 @@ class PostsViewTest < ActionDispatch::IntegrationTest
     # Check if it redirects to the show page of that post
     assert_current_path(user_post_path(@user, post))
   end
+
+  test 'viewing a post shows post details and comments' do
+    visit user_post_path(@user, @post)
+
+    # Test if the post's title is visible
+    assert page.has_content?(@post.title)
+
+    # Test if the post's author is visible
+    assert page.has_content?(@post.author.name)
+
+    # Test if the number of comments the post has is visible
+    assert page.has_content?("comments #{@post.comments.count}")
+
+    # Test if the number of likes the post has is visible
+    assert page.has_content?("likes #{@post.likes.count}")
+
+    # Test if the post's body is visible
+    assert page.has_content?(@post.text)
+
+    # Test if the username of each commentor is visible
+    @post.comments.each do |comment|
+      assert page.has_content?(comment.author.name)
+      assert page.has_content?(comment.text)
+    end
+
+    # Test if the comment each commentor left is visible
+  end
 end
