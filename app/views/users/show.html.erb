@@ -25,7 +25,7 @@
         <%= link_to user_post_path(@user, post), id: "user-post-link-#{@user.id}",  class: "bio flex-c" do %>
           <p>post #<%= index + 1 %> </p>  </p>post-id:  <%= post.id %>
           <span><%= post.text %></span>
-          <%= link_to new_comment_path(user_id: @user.id, post_id: post.id), class: "mr-1 absolute bottom-left-cornor mb-1 btn" do %><p>Comment on this post</p><% end %>
+          <%= link_to new_comment_path(user_id: @user.id, post_id: post.id), class: "mr-1 absolute bottom-left-cornor mb-1 btn" do %><p>Comment on this postaa</p><% end %>
         <div class="find-me">find-me</div>
         <% end %>
         <div class="comment-likes flex gap-1">
@@ -40,7 +40,7 @@
     <% end %>
     <div class="flex-centered">
     <div class="flex">
-      <%= link_to user_posts_path(@user), class: "btn see-all-posts", title: "See all posts" do %><p>Comment on this posta</p><% end %>
+      <%= link_to user_posts_path(@user), class: "btn see-all-posts", title: "See all posts" do %><p>Comment on this post</p><% end %>
     </div>
     </div>
     </div> 

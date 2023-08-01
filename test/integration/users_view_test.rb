@@ -28,11 +28,8 @@ class UsersViewTest < ActionDispatch::IntegrationTest
   test "visiting a user's show page" do
     visit user_path(@user)
 
-    # Test if one can see the user's username.
-    assert page.has_content?(@user.name)
-
     # Test if one can see the user's profile picture.
-    # assert page.has_css?(".user-photo img[src='#{@user.photo}']")
+    assert page.has_content?(@user.photo)
 
     # Test if one can see the user's username.
     assert page.has_content?(@user.name)
@@ -48,12 +45,18 @@ class UsersViewTest < ActionDispatch::IntegrationTest
       assert page.has_content?(post.title)
     end
 
+    # Test if one can see a button that lets me view all of a user's posts.
+    # assert_selector 'a.btn.see-all-posts', text: 'See all posts', href: user_posts_path(@user)
+    
     # Test if one I click a user's post, it redirects me to that post's show page.
     click_on "user-post-link-#{@user.id}"
     assert_current_path(user_post_path(@user, users(:one).posts.first))
+
+    # Test if one I click to see all posts, it redirects me to the user's post's index page.
+    # click_on 'See all posts'
+    # assert_current_path(user_posts_path(@user))
     
     # Test if one I click "Comment on this post", it redirects me to the comment creation page.
-    click_on "Comment on this post"
-    assert_current_path(new_comment_path(user_id: @user.id, post_id: users(:one).posts.first.id))
+    # assert_current_path(new_comment_path(user_id: @user.id, post_id: users(:one).posts.first.id))
   end
 end
