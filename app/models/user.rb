@@ -10,7 +10,7 @@ class User < ApplicationRecord
          timeout_in: 30.minutes # Period of inactivity before a user is automatically logged out (default is nil)
   # Override send_devise_notification to use ActiveJob for delivering emails
   def send_devise_notification(notification, *args)
-    devise_mailer.send(notification, self, *args).deliver_later
+    devise_mailer_class.send(notification, self, *args).deliver_later
   end
 
   validates :name, presence: true
