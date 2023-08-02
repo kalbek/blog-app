@@ -1,16 +1,16 @@
 class Users::SessionsController < Devise::SessionsController
-  puts "heyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyfff: "
+  puts 'heyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyfff: '
   # before_action :configure_sign_in_params, only: [:create]
-  
+
   # GET /resource/sign_in
   def new
-    puts "nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn: "
+    puts 'nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn: '
     super
   end
-  
+
   # POST /resource/sign_in
   def create
-    puts "cccccccccccccccccccccccccccccccccccccccccccccccccccccc: "
+    puts 'cccccccccccccccccccccccccccccccccccccccccccccccccccccc: '
     puts "Parameters received: #{params.inspect}"
     super
   end
@@ -26,5 +26,4 @@ class Users::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
-
 end
