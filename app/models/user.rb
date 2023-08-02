@@ -8,7 +8,11 @@ class User < ApplicationRecord
          confirm_within: 3.days,  # Expiration period for account confirmation (default is nil)
          remember_for: 2.weeks,  # Expiration period for the "remember me" feature (default is 2.weeks)
          timeout_in: 30.minutes  # Period of inactivity before a user is automatically logged out (default is nil)
-
+  # Override send_devise_notification to use ActiveJob for delivering emails
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
+  end
+  
   validates :name, presence: true
   validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   has_many :posts, foreign_key: :author_id
