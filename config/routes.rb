@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :likes, only: [:new, :create]
 
   # Defines the root path route ("/")
-  root "users#index"
+  root to: 'home#index'
 
   get 'users', to: 'users#index', as: :users
 
