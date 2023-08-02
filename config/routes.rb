@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions' }
 
   # Defines the root path route ("/")
-  root to: 'home#index'
+  root to: 'users#index'
 
   get 'users', to: 'users#index', as: :users
 
