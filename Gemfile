@@ -22,6 +22,8 @@ gem 'omniauth', '~> 1.9.1'
 
 gem 'omniauth-github', '~> 1.4.0'
 
+gem 'letter_opener'
+
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'turbo-rails'
 
