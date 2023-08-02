@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def new
     @post = Post.includes(:author, :comments).find(params[:post_id])
     @comment = current_user.comments.build

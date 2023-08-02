@@ -18,6 +18,10 @@ gem 'puma', '~> 5.0'
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails'
 
+gem 'omniauth', '~> 1.9.1'
+
+gem 'omniauth-github', '~> 1.4.0'
+
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'turbo-rails'
 
@@ -75,6 +79,6 @@ group :test do
   gem 'webdrivers'
 end
 
-gem "device", "~> 0.0.0"
+gem 'device', '~> 0.0.0'
 
-gem "devise", "~> 4.9"
+gem 'devise', '~> 4.9'

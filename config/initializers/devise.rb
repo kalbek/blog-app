@@ -83,6 +83,12 @@ Devise.setup do |config|
   # config.http_authenticatable = false
   config.http_authenticatable = [:database]
 
+  OmniAuth.config.allowed_request_methods = [:get, :post]
+
+  require 'omniauth-github'
+  config.omniauth :github, ENV['GITHUB_CLIENT_ID'], ENV['GITHUB_CLIENT_SECRET']
+
+
   # If 401 status code should be returned for AJAX requests. True by default.
   # config.http_authenticatable_on_xhr = true
 
