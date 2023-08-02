@@ -30,4 +30,10 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  devise:
+    sessions:
+      signed_in: 'Signed in successfully.'
+    mailer:
+      confirmation_instructions:
+        subject: 'Hello everybody!'
+
