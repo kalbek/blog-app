@@ -74,3 +74,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem "device", "~> 0.0.0"
+
+gem "devise", "~> 4.9"
