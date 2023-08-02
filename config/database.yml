@@ -25,7 +25,7 @@ development:
   adapter: postgresql
   database: postgres
   username: postgres
-  password: nonstop
+  password: 123
   host: localhost
   port: 5432
 
@@ -63,7 +63,7 @@ test:
    adapter: postgresql
    database: postgres
    username: postgres
-   password: nonstop
+   password: 123
    host: localhost
    port: 5432
 
