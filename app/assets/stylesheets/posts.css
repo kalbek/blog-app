@@ -77,6 +77,12 @@
   padding: 0.1rem 1rem;
 }
 
+.centered {
+  position: absolute;
+  left: 30%;
+  bottom: 10%;
+}
+
 .bottom-right-cornor {
   bottom: 0.1rem;
   right: 0.5rem;
