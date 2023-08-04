@@ -13,8 +13,7 @@
       </div>
     </div>
     <div class="flex-spaced post-choice relative">
-    <%= link_to user_path(@user), class: "btn absolute my-post mt-4" do %><p>My Posts</p><% end %>
-    <%= link_to new_post_path(@user), class: "btn absolute new-post mt-4" do %><p>New Post</p><% end %>
+   
   </div>
     <% @user.posts.reverse_each.each_with_index do |post, index| %>
       <div class="post-comment">
