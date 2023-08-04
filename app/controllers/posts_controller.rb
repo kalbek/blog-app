@@ -29,7 +29,7 @@ class PostsController < ApplicationController
       render :new
     end
   end
- 
+
   def destroy
     @post = Post.find(params[:id])
     authorize! :destroy, @post # This line checks if the user is authorized to delete the post
