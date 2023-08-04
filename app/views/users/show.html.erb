@@ -44,14 +44,14 @@
       </div>
     <% end %>
     <div class="flex-centered">
-    <div class="flex">
-      <%= link_to user_posts_path(@user), class: "btn see-all-posts", title: "See all posts" do %><p>See all posts</p><% end %>
-    </div>
+   
     </div>
     <div class="flex-spaced post-choice relative">
-    <%= link_to user_path(@user), class: "btn absolute my-post mt-4" do %><p>My Posts</p><% end %>
-    <%= link_to new_post_path(@user), class: "btn absolute new-post mt-4" do %><p>New Post</p><% end %>
-  </div>
-    </div> 
+
+      <%= link_to user_posts_path(@user), class: "btn absolute my-post mt-4" do %><p>See all posts</p><% end %> 
+      
+      <%= link_to new_post_path(@user), class: "btn absolute new-post mt-4" do %><p>New Post</p><% end %>
+    </div>
+  </div> 
 </body>
 </html>
