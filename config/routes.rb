@@ -29,5 +29,13 @@ Rails.application.routes.draw do
       resources :comments, only: :index
       resources :comments, only: :create
     end
+    resources :users do
+      resources :posts, only: [] do
+        resources :comments, only: :index
+      end
+    end
+    resources :posts, only: [] do
+      resources :comments, only: :create
+    end
   end
 end

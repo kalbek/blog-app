@@ -1,45 +1,51 @@
 # app/controllers/posts_controller.rb
-class PostsController < ApplicationController
-  before_action :authenticate_user!
+module Api
+  class PostsController < ApplicationController
+    before_action :authenticate_user!
 
-  def index
-    @user = User.find(params[:user_id])
-    @posts = Post.includes(:author).all
-  end
-
-  def show
-    @user = User.find(params[:user_id])
-    @post = @user.posts.includes(:author).find(params[:id])
-  end
-
-  def new
-    @post = current_user.posts.build
-    @current_user = current_user
-  end
-
-  def create
-    @post = current_user.posts.build(post_params)
-    @post.comments_counter = 0
-    @post.likes_counter = 0
-
-    if @post.save
-      redirect_to user_post_path(@post.author, @post), notice: 'Post created successfully.'
-    else
-      flash.now[:alert] = @post.errors.full_messages.join(', ')
-      render :new
+    def index
+      @user = User.find(params[:user_id])
+      @posts = Post.includes(:author).all
+      render json: posts
     end
-  end
 
-  def destroy
-    @post = Post.find(params[:id])
-    authorize! :destroy, @post # This line checks if the user is authorized to delete the post
-    @post.destroy
-    redirect_to root_path, notice: 'Post was successfully deleted.'
-  end
+    def show
+      @user = User.find(params[:user_id])
+      @post = @user.posts.includes(:author).find(params[:id])
+    end
 
-  private
+    def new
+      @post = current_user.posts.build
+      @current_user = current_user
+    end
 
-  def post_params
-    params.require(:post).permit(:title, :text, :comments_counter, :likes_counter)
+    def create
+      @post = current_user.posts.build(post_params)
+      @post.comments_counter = 0
+      @post.likes_counter = 0
+
+      respond_to do |format|
+        if @post.save
+          format.html { redirect_to user_post_path(@post.author, @post), notice: 'Post created successfully.' }
+          format.json { render json: @post, status: :created, location: user_post_path(@post.author, @post) }
+        else
+          format.html { flash.now[:alert] = @post.errors.full_messages.join(', '); render :new }
+          format.json { render json: @post.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+
+    def destroy
+      @post = Post.find(params[:id])
+      authorize! :destroy, @post # This line checks if the user is authorized to delete the post
+      @post.destroy
+      redirect_to root_path, notice: 'Post was successfully deleted.'
+    end
+
+    private
+
+    def post_params
+      params.require(:post).permit(:title, :text, :comments_counter, :likes_counter)
+    end
   end
 end
