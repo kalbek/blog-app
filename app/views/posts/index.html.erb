@@ -29,13 +29,17 @@
       <div class="post-comment">
         <div class="bio bordered flex-c scroll">
         <% post.comments.each_with_index do |comment, index| %>
-          comment-id: <%= comment.id %> 
-          comment-author-id: <%= comment.author_id %> 
+        
             <% user = User.find_by(id: comment.author_id) %>
             <div class="flex">
               <%= user.name %>
               <span><%= comment.text %></span>
             </div>
+            <% if can? :destroy, comment %>
+              <%= form_with(model: comment, url: comment_path(comment), method: :delete, data: { turbo: "false" }) do |form| %>
+                <%= form.submit "Delete this comment", class: "delete-post top-right-cornor" %>
+              <% end %>
+            <% end %>
           <% end %>
         </div>
       </div>

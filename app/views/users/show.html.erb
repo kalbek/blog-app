@@ -29,7 +29,7 @@
         <% if can? :destroy, @post %>
         <%= form_with(model: @post, url: post_path(@post, id: post.id), method: :delete, data: { turbo: "false" }) do |form| %>
             <%= form.submit "Delete Post", class: "absolute delete-post top-right-cornor delete-post", data: { confirm: "Are you sure you want to delete this post?" } %>
-          <% end %>
+        <% end %>
       <% end %>
       
         <% end %>
