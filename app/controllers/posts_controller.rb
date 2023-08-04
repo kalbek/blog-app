@@ -1,5 +1,7 @@
 # app/controllers/posts_controller.rb
 class PostsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @user = User.find(params[:user_id])
     @posts = Post.includes(:author).all

@@ -12,6 +12,8 @@ Rails.application.configure do
   config.use_transactional_fixtures = false
   config.asset_host = 'http://localhost:3000' # Adjust the host as needed for your local setup
   
+  Rails.application.config.middleware.insert_before Warden::Manager, ActionDispatch::Cookies
+  Rails.application.config.middleware.insert_before Warden::Manager, ActionDispatch::Session::CookieStore
 
   # Turn false under Spring and add config.action_view.cache_template_loading = true.
   config.cache_classes = true
