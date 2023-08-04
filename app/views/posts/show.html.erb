@@ -9,7 +9,7 @@
     <div class="post-comment">
       <div class="bio bordered flex-c relative">
         <div class="flex-spaced">
-          <p>post by <%= @post.author.name %></p> post-id <%= @post.id %>
+          <p>post by <%= @post.author.name %></p> 
           <div class="flex absolute top-right-cornor"> 
             <p>comments <%= @post.comments.count %></p> 
             <p>likes <%= @post.likes.count %></p>
@@ -22,6 +22,11 @@
               <%= form.hidden_field :post_id, value: @post.id %>
               <%= form.submit "Like this post", class: "like-btn absolute bottom-left-cornor mb-1"%>
          <% end %>
+         <% if can? :destroy, @post %>
+         <%= form_with(model: @post, url: post_path(@post), method: :delete, data: { turbo: "false" }) do |form| %>
+          <%= form.submit "Delete Post", class: " centered delete-post   delete-post", data: { confirm: "Are you sure you want to delete this post?" } %>
+        <% end %>
+        <% end %>
 
       </div>
     </div>
@@ -32,11 +37,20 @@
         <p><%= comment.author.name %>: </p>
         <p><%= comment.text %></p>
       </div>
+      <% if can? :destroy, comment %>
+      <%= form_with(model: comment, url: comment_path(comment), method: :delete, data: { turbo: "false" }) do |form| %>
+        <%= form.submit "Delete this comment", class: "delete-post top-right-cornor" %>
+      <% end %>
     <% end %>
+    <% end %>
+
+
+ 
     <div class="flex-spaced post-choice relative">
       <%= link_to user_path(@user), class: "btn absolute my-post mt-4" do %><p>My Posts</p><% end %>
       <%= link_to new_post_path(@user), class: "btn absolute new-post mt-4" do %><p>New Post</p><% end %>
     </div>
+
     </div>
   </div>
 </body>

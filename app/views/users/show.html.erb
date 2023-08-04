@@ -25,8 +25,13 @@
         <%= link_to user_post_path(@user, post), id: "user-post-link-#{@user.id}",  class: "bio flex-c" do %>
           <p>post #<%= index + 1 %> </p>  </p>post-id:  <%= post.id %>
           <span><%= post.text %></span>
-          <%= link_to new_comment_path(user_id: @user.id, post_id: post.id), class: "mr-1 absolute bottom-left-cornor mb-1 btn" do %><p>Comment on this postaa</p><% end %>
-        <div class="find-me">find-me</div>
+          <%= link_to new_comment_path(user_id: @user.id, post_id: post.id), class: "mr-1 absolute bottom-left-cornor mb-1 btn" do %><p>Comment on this post</p><% end %>
+        <% if can? :destroy, @post %>
+        <%= form_with(model: @post, url: post_path(@post, id: post.id), method: :delete, data: { turbo: "false" }) do |form| %>
+            <%= form.submit "Delete Post", class: "absolute delete-post top-right-cornor delete-post", data: { confirm: "Are you sure you want to delete this post?" } %>
+        <% end %>
+      <% end %>
+      
         <% end %>
         <div class="comment-likes flex gap-1">
           <div class="flex-c gap-3">
@@ -39,10 +44,14 @@
       </div>
     <% end %>
     <div class="flex-centered">
-    <div class="flex">
-      <%= link_to user_posts_path(@user), class: "btn see-all-posts", title: "See all posts" do %><p>See all posts</p><% end %>
+   
     </div>
+    <div class="flex-spaced post-choice relative">
+
+      <%= link_to user_posts_path(@user), class: "btn absolute my-post mt-4" do %><p>See all posts</p><% end %> 
+      
+      <%= link_to new_post_path(@user), class: "btn absolute new-post mt-4" do %><p>New Post</p><% end %>
     </div>
-    </div> 
+  </div> 
 </body>
 </html>
