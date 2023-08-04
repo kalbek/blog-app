@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :posts, only: [:new, :create]
+  resources :posts, only: [:new, :create, :destroy]
   resources :comments, only: [:new, :create]
   resources :likes, only: [:new, :create]
 

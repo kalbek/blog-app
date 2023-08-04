@@ -60,6 +60,23 @@
   right: 0.5rem;
 }
 
+.top-left-cornor {
+  top: 0.1rem;
+  left: 90%;
+  height: auto;
+  margin-top: 1rem;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.delete-post {
+  margin-top: 1rem;
+  margin-right: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+}
+
 .bottom-right-cornor {
   bottom: 0.1rem;
   right: 0.5rem;
