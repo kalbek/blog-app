@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '6d9a3e0e0de734995be8349ac4ce814b201ebc6c624bd193d4142786837127171f953206ca369b3e2b778c12f84e0cd73f2dceaaa9601f535041bf3ca9ca888f'
+  # config.secret_key = '2846d8aeacab1b9f06ff5ccf6d07312bfe44e3149d53b871c854fab257af21c257ce2a89b835448167e20b4aa243341d84eafe6d7b29f0922cd47098da41bc37'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -23,7 +23,6 @@ Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
-  config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
@@ -81,13 +80,6 @@ Devise.setup do |config|
   # The supported strategies are:
   # :database      = Support basic authentication with authentication key + password
   # config.http_authenticatable = false
-  config.http_authenticatable = [:database]
-
-  OmniAuth.config.allowed_request_methods = [:get, :post]
-
-  require 'omniauth-github'
-  config.omniauth :github, ENV['GITHUB_CLIENT_ID'], ENV['GITHUB_CLIENT_SECRET']
-
 
   # If 401 status code should be returned for AJAX requests. True by default.
   # config.http_authenticatable_on_xhr = true
@@ -134,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'fc9025b79bff94795ddd299a1f1f68c35d18bb3f2c7db9ef3e20d83d854fe81f764924f265eb0e96dd15e852fdcc2169b9539902d8c17e26ca4fd7b22b65af4b'
+  # config.pepper = 'dc14909b46a90275cdbeef05e5ee7fc0e7492fc31701cb434b42148ea269115fa15b30ca1cadc50bc49cfb0af318a980b1c48bb0cccf579ca9c7b88f5d7375cb'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false

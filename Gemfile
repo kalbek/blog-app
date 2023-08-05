@@ -20,6 +20,11 @@ gem 'cancancan'
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails'
 
+# Gemfile
+gem 'rswag-api'
+
+gem 'rswag-ui'
+
 gem 'omniauth', '~> 1.9.1'
 
 gem 'omniauth-github', '~> 1.4.0'
@@ -61,6 +66,8 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'rspec-rails'
+  gem 'rswag-specs'
 end
 
 group :development do

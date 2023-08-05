@@ -95,9 +95,9 @@ RSpec.configure do |config|
   #   Kernel.srand config.seed
 
   # Include Devise test helpers for controller and view specs
-  config.include Devise::Test::ControllerHelpers, type: :controller
-  config.include Devise::Test::ControllerHelpers, type: :view
+  # config.include Devise::Test::ControllerHelpers, type: :controller
+  # config.include Devise::Test::ControllerHelpers, type: :view
 
   # Include Devise test helpers for integration tests (Capybara)
-  config.include Devise::Test::IntegrationHelpers, type: :feature
+  # config.include Devise::Test::IntegrationHelpers, type: :feature
 end
